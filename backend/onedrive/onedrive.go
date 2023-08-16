@@ -1382,10 +1382,10 @@ func (f *Fs) Copy(ctx context.Context, src fs.Object, remote string) (fs.Object,
 	}
 
 	// For OneDrive Business, this is only supported within the same drive
-	if f.driveType != driveTypePersonal && srcObj.fs.driveID != f.driveID {
-		fs.Debugf(src, "Can't server-side copy - cross-drive but not OneDrive Personal")
-		return nil, fs.ErrorCantCopy
-	}
+	//if f.driveType != driveTypePersonal && srcObj.fs.driveID != f.driveID {
+	//	fs.Debugf(src, "Can't server-side copy - cross-drive but not OneDrive Personal")
+	//	return nil, fs.ErrorCantCopy
+	//}
 
 	err := srcObj.readMetaData(ctx)
 	if err != nil {
